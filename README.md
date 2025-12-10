@@ -6,9 +6,9 @@ Este proyecto implementa una simulación del modelo epidemiológico SIR en una g
 
 Cada persona se encuentra en uno de tres estados:
 
-S (Susceptible): persona sana, puede infectarse.
-I (Infectado): persona contagiada, puede infectar a sus vecinos y eventualmente recuperarse o morir.
-R (Recuperado): persona que se recuperó y ya no puede infectarse.
+- S (Susceptible): persona sana, puede infectarse.
+- I (Infectado): persona contagiada, puede infectar a sus vecinos y eventualmente recuperarse o morir.
+- R (Recuperado): persona que se recuperó y ya no puede infectarse.
 
 La simulación se ejecuta durante 365 días, actualizando los estados diariamente según probabilidades de infección, recuperación y muerte.
 
@@ -20,15 +20,15 @@ El modelo SIR en grilla se basa en una discretización de las ecuaciones diferen
 
 ![alt text](image.png)
 
-β = probabilidad de contagio por contacto
+- β = probabilidad de contagio por contacto
 
-γ = probabilidad de recuperación diaria
+- γ = probabilidad de recuperación diaria
 
-μ = probabilidad de muerte diaria
+- μ = probabilidad de muerte diaria
 
-Ivecinos(t) = número de vecinos infectados
+- Ivecinos(t) = número de vecinos infectados
 
-𝑁vecinos = número total de vecinos considerados (8 vecinos en la grilla)
+- 𝑁vecinos = número total de vecinos considerados (8 vecinos en la grilla)
 
 # 3. Estructura del Proyecto
 
