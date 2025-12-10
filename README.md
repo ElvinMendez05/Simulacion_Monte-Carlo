@@ -2,7 +2,9 @@ Práctica SIR 2D – Simulación Monte-Carlo
 
 # 1. Descripción
 
-Este proyecto implementa una simulación del modelo epidemiológico SIR en una grilla 2D de 1000×1000 celdas, representando 1 millón de personas. Cada persona se encuentra en uno de tres estados:
+Este proyecto implementa una simulación del modelo epidemiológico SIR en una grilla 2D de 1000×1000 celdas, representando 1 millón de personas.
+
+Cada persona se encuentra en uno de tres estados:
 
 S (Susceptible): persona sana, puede infectarse.
 I (Infectado): persona contagiada, puede infectar a sus vecinos y eventualmente recuperarse o morir.
@@ -19,10 +21,13 @@ El modelo SIR en grilla se basa en una discretización de las ecuaciones diferen
 ![alt text](image.png)
 
 β = probabilidad de contagio por contacto
+
 γ = probabilidad de recuperación diaria
+
 μ = probabilidad de muerte diaria
 
 Ivecinos(t) = número de vecinos infectados
+
 𝑁vecinos = número total de vecinos considerados (8 vecinos en la grilla)
 
 # 3. Estructura del Proyecto
@@ -72,6 +77,7 @@ mpiexec -n 8 python par/parallel.py
 - 5.4 Speed-up
 
 cd script
+
 python "plot_speedup.py" "..\results\times_par.csv" "..\results\times_seq.csv"
 
 # 6. Implementación
@@ -79,7 +85,9 @@ python "plot_speedup.py" "..\results\times_par.csv" "..\results\times_seq.csv"
 - 6.1 Secuencial
 
 Actualiza cada celda individualmente.
+
 Calcula estadísticas globales (infectados, recuperados, R0) al final de cada día.
+
 Validada con small_case_validation.py para un caso pequeño (ej. 10×10 celdas).
 
 - 6.2 Paralelo
