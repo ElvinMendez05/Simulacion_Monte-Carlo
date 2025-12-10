@@ -1,4 +1,4 @@
-Práctica SIR 2D – Simulación Monte-Carlo
+# Práctica SIR 2D – Simulación Monte-Carlo
 
 # 1. Descripción
 
@@ -93,14 +93,19 @@ Validada con small_case_validation.py para un caso pequeño (ej. 10×10 celdas).
 - 6.2 Paralelo
 
 La grilla se divide en bloques asignados a distintos cores.
+
 Se utilizan ghost-cells para sincronizar fronteras entre bloques.
+
 Estadísticas globales se reducen con MPI reduce.
+
 Permite ejecutar con 1, 2, 4, 6 y 8 cores, observando strong scaling.
 
 # 7. Experimentos y Resultados
 
 Tiempos registrados en results/times_seq.csv y results/times_par.csv.
+
 Gráfica de speed-up en results/speedup.png.
+
 Ejemplo de resultados de strong scaling:
 
 ![alt text](image-1.png)
@@ -112,6 +117,9 @@ Animaciones generadas en results/animations/ muestran la propagación del brote 
 La paralelización con ghost-cells y reducción MPI es eficiente y correcta, reproduciendo los mismos resultados que la secuencial.
 
 El strong scaling es casi lineal hasta 8 cores.
+
 Las animaciones permiten visualizar claramente la dinámica del brote.
+
 El modelo SIR validado coincide con la teoría y con casos pequeños.
+
 Extensiones posibles: movilidad de individuos, vacunación, múltiples poblaciones, variación de probabilidades.
