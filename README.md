@@ -107,3 +107,16 @@ Permite ejecutar con 1, 2, 4, 6 y 8 cores, observando strong scaling.
 Tiempos registrados en results/times_seq.csv y results/times_par.csv.
 Gráfica de speed-up en results/speedup.png.
 Ejemplo de resultados de strong scaling:
+
+![alt text](image-1.png)
+
+Animaciones generadas en results/animations/ muestran la propagación del brote comparando secuencial vs paralelo.
+
+8. Análisis y Conclusiones
+
+La paralelización con ghost-cells y reducción MPI es eficiente y correcta, reproduciendo los mismos resultados que la secuencial.
+
+El strong scaling es casi lineal hasta 8 cores.
+Las animaciones permiten visualizar claramente la dinámica del brote.
+El modelo SIR validado coincide con la teoría y con casos pequeños.
+Extensiones posibles: movilidad de individuos, vacunación, múltiples poblaciones, variación de probabilidades.
