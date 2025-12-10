@@ -116,10 +116,10 @@ Animaciones generadas en results/animations/ muestran la propagación del brote 
 
 La paralelización con ghost-cells y reducción MPI es eficiente y correcta, reproduciendo los mismos resultados que la secuencial.
 
-El strong scaling es casi lineal hasta 8 cores.
+- El strong scaling es casi lineal hasta 8 cores.
 
-Las animaciones permiten visualizar claramente la dinámica del brote.
+- Las animaciones permiten visualizar claramente la dinámica del brote.
 
-El modelo SIR validado coincide con la teoría y con casos pequeños.
+- El modelo SIR validado coincide con la teoría y con casos pequeños.
 
-Extensiones posibles: movilidad de individuos, vacunación, múltiples poblaciones, variación de probabilidades.
+- Extensiones posibles: movilidad de individuos, vacunación, múltiples poblaciones, variación de probabilidades.
