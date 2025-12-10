@@ -1,6 +1,6 @@
 Práctica SIR 2D – Simulación Monte-Carlo
 
-1. Descripción
+# 1. Descripción
 
 Este proyecto implementa una simulación del modelo epidemiológico SIR en una grilla 2D de 1000×1000 celdas, representando 1 millón de personas. Cada persona se encuentra en uno de tres estados:
 
@@ -12,7 +12,7 @@ La simulación se ejecuta durante 365 días, actualizando los estados diariament
 
 El proyecto compara implementaciones secuenciales y paralelas, generando mediciones de tiempo, speed-up, y visualizaciones animadas.
 
-2. Modelo Matemático
+# 2. Modelo Matemático
 
 El modelo SIR en grilla se basa en una discretización de las ecuaciones diferenciales clásicas, considerando interacción local:
 
@@ -56,20 +56,20 @@ Ivecinos(t) = número de vecinos infectados
    ├─ params.yaml  
    └─ README.md
 
-4. Instalación
+# 4. Instalación
 
 Instalar dependencias:
 pip install numpy pyyaml mpi4py pillow imageio matplotlib pandas
 
-5. Ejecución
+#5. Ejecución
 
-# 5.1 Secuencial
+- 5.1 Secuencial
 
 cd seq
 python sequential.py
 python seq/sequential.py
 
-# 5.2 Paralelo (ejemplo 4 cores)
+- 5.2 Paralelo (ejemplo 4 cores)
 
 cd par
 mpiexec -n 2 python parallel.py
@@ -82,27 +82,27 @@ mpiexec -n 4 python par/parallel.py
 mpiexec -n 6 python par/parallel.py
 mpiexec -n 8 python par/parallel.py
 
-# 5.4 Speed-up
+- 5.4 Speed-up
 
 cd script
 python "plot_speedup.py" "..\results\times_par.csv" "..\results\times_seq.csv"
 
-6. Implementación
+# 6. Implementación
 
-# 6.1 Secuencial
+- 6.1 Secuencial
 
 Actualiza cada celda individualmente.
 Calcula estadísticas globales (infectados, recuperados, R0) al final de cada día.
 Validada con small_case_validation.py para un caso pequeño (ej. 10×10 celdas).
 
-# 6.2 Paralelo
+- 6.2 Paralelo
 
 La grilla se divide en bloques asignados a distintos cores.
 Se utilizan ghost-cells para sincronizar fronteras entre bloques.
 Estadísticas globales se reducen con MPI reduce.
 Permite ejecutar con 1, 2, 4, 6 y 8 cores, observando strong scaling.
 
-7. Experimentos y Resultados
+#7. Experimentos y Resultados
 
 Tiempos registrados en results/times_seq.csv y results/times_par.csv.
 Gráfica de speed-up en results/speedup.png.
@@ -112,7 +112,7 @@ Ejemplo de resultados de strong scaling:
 
 Animaciones generadas en results/animations/ muestran la propagación del brote comparando secuencial vs paralelo.
 
-8. Análisis y Conclusiones
+# 8. Análisis y Conclusiones
 
 La paralelización con ghost-cells y reducción MPI es eficiente y correcta, reproduciendo los mismos resultados que la secuencial.
 
