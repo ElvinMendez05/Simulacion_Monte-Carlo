@@ -1,0 +1,9 @@
+grid_size: 1000
+days: 365
+p_infect: 0.03
+p_recover: 0.01
+p_death: 0.001
+initial_infected: 10
+seed: 42
+boundary: periodic
+frame_interval: 5
