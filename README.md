@@ -27,46 +27,20 @@ Ivecinos(t) = número de vecinos infectados
 
 # 3. Estructura del Proyecto
 
-Proyecto SIR/
-│
-├─ par/  
- │ ├─ parallel.py
-│ └─ run_experiments.sh
-│
-├─ results/  
- │ ├─ animations/
-│ ├─ speedup.png
-│ ├─ times_par.csv
-│ └─ times_seq.csv
-│
-├─ script/  
- │ ├─ make_animation.py
-│ └─ plot_speedup.py
-│
-├─ seq/  
- │ ├─ sequential.py
-│ └─ small_case_validation.py
-│
-├─ utils/  
- │ ├─ **pycache**/
-│ ├─ **init**.py
-│ ├─ io_utils.py
-│ ├─ metrics.py
-│ └─ viz.py
-│
-├─ params.yaml  
- └─ README.md
+![alt text](image-2.png)
 
 # 4. Instalación
 
 Instalar dependencias:
+
 pip install numpy pyyaml mpi4py pillow imageio matplotlib pandas
 
-#5. Ejecución
+# 5. Ejecución
 
 - 5.1 Secuencial
 
 cd seq
+
 python sequential.py
 
 - o
@@ -115,7 +89,7 @@ Se utilizan ghost-cells para sincronizar fronteras entre bloques.
 Estadísticas globales se reducen con MPI reduce.
 Permite ejecutar con 1, 2, 4, 6 y 8 cores, observando strong scaling.
 
-#7. Experimentos y Resultados
+# 7. Experimentos y Resultados
 
 Tiempos registrados en results/times_seq.csv y results/times_par.csv.
 Gráfica de speed-up en results/speedup.png.
