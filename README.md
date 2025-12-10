@@ -25,36 +25,37 @@ El modelo SIR en grilla se basa en una discretización de las ecuaciones diferen
 Ivecinos(t) = número de vecinos infectados
 𝑁vecinos = número total de vecinos considerados (8 vecinos en la grilla)
 
-3. Estructura del Proyecto
-   Proyecto SIR/
-   │
-   ├─ par/  
-   │ ├─ parallel.py
-   │ └─ run_experiments.sh
-   │
-   ├─ results/  
-   │ ├─ animations/
-   │ ├─ speedup.png
-   │ ├─ times_par.csv
-   │ └─ times_seq.csv
-   │
-   ├─ script/  
-   │ ├─ make_animation.py
-   │ └─ plot_speedup.py
-   │
-   ├─ seq/  
-   │ ├─ sequential.py
-   │ └─ small_case_validation.py
-   │
-   ├─ utils/  
-   │ ├─ **pycache**/
-   │ ├─ **init**.py
-   │ ├─ io_utils.py
-   │ ├─ metrics.py
-   │ └─ viz.py
-   │
-   ├─ params.yaml  
-   └─ README.md
+# 3. Estructura del Proyecto
+
+Proyecto SIR/
+│
+├─ par/  
+ │ ├─ parallel.py
+│ └─ run_experiments.sh
+│
+├─ results/  
+ │ ├─ animations/
+│ ├─ speedup.png
+│ ├─ times_par.csv
+│ └─ times_seq.csv
+│
+├─ script/  
+ │ ├─ make_animation.py
+│ └─ plot_speedup.py
+│
+├─ seq/  
+ │ ├─ sequential.py
+│ └─ small_case_validation.py
+│
+├─ utils/  
+ │ ├─ **pycache**/
+│ ├─ **init**.py
+│ ├─ io_utils.py
+│ ├─ metrics.py
+│ └─ viz.py
+│
+├─ params.yaml  
+ └─ README.md
 
 # 4. Instalación
 
@@ -67,19 +68,31 @@ pip install numpy pyyaml mpi4py pillow imageio matplotlib pandas
 
 cd seq
 python sequential.py
+
+- o
+
 python seq/sequential.py
 
 - 5.2 Paralelo (ejemplo 4 cores)
 
 cd par
+
 mpiexec -n 2 python parallel.py
+
 mpiexec -n 4 python parallel.py
+
 mpiexec -n 6 python parallel.py
+
 mpiexec -n 8 python parallel.py
 
+- o
+
 mpiexec -n 2 python par/parallel.py
+
 mpiexec -n 4 python par/parallel.py
+
 mpiexec -n 6 python par/parallel.py
+
 mpiexec -n 8 python par/parallel.py
 
 - 5.4 Speed-up
